@@ -56,15 +56,15 @@ namespace CodeWar
         {
             Assert.AreEqual("579", Book.sumStrings("123", "456"));
             Assert.AreEqual("9984312157800830105371", Book.sumStrings("1234567891112343", "9984310923232938993028"));
-            Assert.AreEqual("11111111110", Program.SumStrings("123456789", "10987654321"));
+            Assert.AreEqual("11111111110", Kata.SumStrings("123456789", "10987654321"));
         }
 
         [Test]
         public void KataTests()
         {
-            Assert.AreEqual("theStealthWarrior", Program.ToCamelCase("the_stealth_warrior"), "Kata.ToCamelCase('the_stealth_warrior') did not return correct value");
-            Assert.AreEqual("TheStealthWarrior", Program.ToCamelCase("The-Stealth-Warrior"), "Kata.ToCamelCase('The-Stealth-Warrior') did not return correct value");
-            Assert.AreEqual("", Program.ToCamelCase(""));
+            Assert.AreEqual("theStealthWarrior", Kata.ToCamelCase("the_stealth_warrior"), "Kata.ToCamelCase('the_stealth_warrior') did not return correct value");
+            Assert.AreEqual("TheStealthWarrior", Kata.ToCamelCase("The-Stealth-Warrior"), "Kata.ToCamelCase('The-Stealth-Warrior') did not return correct value");
+            Assert.AreEqual("", Kata.ToCamelCase(""));
         }
 
 
@@ -73,64 +73,64 @@ namespace CodeWar
         public void TestTicket1()
         {
             int[] peopleInProgram = new int[] { 25, 25, 50, 50 };
-            Assert.AreEqual("YES", Program.Tickets(peopleInProgram));
+            Assert.AreEqual("YES", Kata.Tickets(peopleInProgram));
         }
 
         [Test]
         public void TestTicket2()
         {
             int[] peopleInProgram = new int[] { 25, 100 };
-            Assert.AreEqual("NO", Program.Tickets(peopleInProgram));
+            Assert.AreEqual("NO", Kata.Tickets(peopleInProgram));
         }
 
         [Test]
         public void Test3()
         {
             int[] peopleInProgram = new int[] { 25, 50 };
-            Assert.AreEqual("YES", Program.Tickets(peopleInProgram));
+            Assert.AreEqual("YES", Kata.Tickets(peopleInProgram));
         }
 
         [Test]
         public void Test4()
         {
             int[] peopleInProgram = new int[] { 50, 25, 100 };
-            Assert.AreEqual("NO", Program.Tickets(peopleInProgram));
+            Assert.AreEqual("NO", Kata.Tickets(peopleInProgram));
         }
 
         [Test]
         public void Test5()
         {
             int[] peopleInProgram = new int[] { 25, 25 };
-            Assert.AreEqual("YES", Program.Tickets(peopleInProgram));
+            Assert.AreEqual("YES", Kata.Tickets(peopleInProgram));
         }
 
         [Test]
         public void Test6()
         {
             int[] peopleInProgram = new int[] { 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 50, 100, 25 };
-            Assert.AreEqual("YES", Program.Tickets(peopleInProgram));
+            Assert.AreEqual("YES", Kata.Tickets(peopleInProgram));
         }
 
         [Test]
         public void Test7()
         {
             int[] peopleInProgram = new int[] { 25, 25, 25, 100 };
-            Assert.AreEqual("YES", Program.Tickets(peopleInProgram));
+            Assert.AreEqual("YES", Kata.Tickets(peopleInProgram));
         }
 
         [Test]
         public void Test8()
         {
             int[] peopleInProgram = new int[] { 25 };
-            Assert.AreEqual("YES", Program.Tickets(peopleInProgram));
+            Assert.AreEqual("YES", Kata.Tickets(peopleInProgram));
         }
         [Test]
         public void FactorialZerosTest()
         {
-            Assert.AreEqual(1, Program.TrailingZeros(5));
-            Assert.AreEqual(6, Program.TrailingZeros(25));
-            Assert.AreEqual(131, Program.TrailingZeros(531));
-            Assert.AreEqual(249, Program.TrailingZeros(1000));
+            Assert.AreEqual(1, Kata.TrailingZeros(5));
+            Assert.AreEqual(6, Kata.TrailingZeros(25));
+            Assert.AreEqual(131, Kata.TrailingZeros(531));
+            Assert.AreEqual(249, Kata.TrailingZeros(1000));
         }
         private static IEnumerable<TestCaseData> testCases
         {
@@ -155,10 +155,10 @@ namespace CodeWar
             testing(Arge.NbYear(1500000, 0.25, 1000, 2000000), 94);
         }
         [Test, TestCaseSource("testCases")]
-        public string Test(string s) => Program.High(s);
+        public string Test(string s) => Kata.High(s);
         private static void Tester(List<int> argument, List<int> expectedResult)
         {
-            CollectionAssert.AreEqual(expectedResult, Program.RemoveSmallest(argument));
+            CollectionAssert.AreEqual(expectedResult, Kata.RemoveSmallest(argument));
         }
         [Test]
         public static void BasicTests()
@@ -209,40 +209,40 @@ namespace CodeWar
         [Test]
         public void BiggestTest()
         {
-            Assert.AreEqual("321", Program.Biggest(new[] { 1, 2, 3 }));
-            Assert.AreEqual("12121", Program.Biggest(new[] { 121, 12 }));
-            Assert.AreEqual("12812", Program.Biggest(new[] { 12, 128 }));
-            Assert.AreEqual("505150", Program.Biggest(new[] { 5051, 50 }));
-            Assert.AreEqual("10110", Program.Biggest(new[] { 10, 101 }));
-            Assert.AreEqual("9534330", Program.Biggest(new[] { 3, 30, 34, 5, 9 }));
+            Assert.AreEqual("321", Kata.Biggest(new[] { 1, 2, 3 }));
+            Assert.AreEqual("12121", Kata.Biggest(new[] { 121, 12 }));
+            Assert.AreEqual("12812", Kata.Biggest(new[] { 12, 128 }));
+            Assert.AreEqual("505150", Kata.Biggest(new[] { 5051, 50 }));
+            Assert.AreEqual("10110", Kata.Biggest(new[] { 10, 101 }));
+            Assert.AreEqual("9534330", Kata.Biggest(new[] { 3, 30, 34, 5, 9 }));
         }
 
         [Test]
         public static void Test9()
         {
             int[] exampleTest1 = { 2, 6, 8, -10, 3 };
-            Assert.IsTrue(3 == Program.Find(exampleTest1));
+            Assert.IsTrue(3 == Kata.Find(exampleTest1));
         }
 
         [Test]
         public static void Test10()
         {
             int[] exampleTest2 = { 206847684, 1056521, 7, 17, 1901, 21104421, 7, 1, 35521, 1, 7781 };
-            Assert.IsTrue(206847684 == Program.Find(exampleTest2));
+            Assert.IsTrue(206847684 == Kata.Find(exampleTest2));
         }
 
         [Test]
         public static void Tes11()
         {
             int[] exampleTest3 = { int.MaxValue, 0, 1 };
-            Assert.IsTrue(0 == Program.Find(exampleTest3));
+            Assert.IsTrue(0 == Kata.Find(exampleTest3));
         }
 
         [TestCase("()", true)]
         [TestCase("({", false)]
         public void Test12(string input, bool expected)
         {
-            Assert.AreEqual(expected, Program.Check(input));
+            Assert.AreEqual(expected, Kata.Check(input));
         }
 
         [Test]
@@ -255,17 +255,17 @@ namespace CodeWar
         [Test]
         public void SumPositives()
         {
-            Assert.AreEqual(16, Program.Sum(new[] { 6, 2, 1, 8, 10 }));
-            Assert.AreEqual(27, Program.Sum(new[] { 6, 2, 1, 8, 10, 10, 1 }));
-            Assert.AreEqual(0, Program.Sum(new[] { 0 }));
+            Assert.AreEqual(16, Kata.Sum(new[] { 6, 2, 1, 8, 10 }));
+            Assert.AreEqual(27, Kata.Sum(new[] { 6, 2, 1, 8, 10, 10, 1 }));
+            Assert.AreEqual(0, Kata.Sum(new[] { 0 }));
             var emptyArr = new int[] { };
-            Assert.AreEqual(0, Program.Sum(emptyArr));
+            Assert.AreEqual(0, Kata.Sum(emptyArr));
         }
 
         [Test]
         public void SumNullArray()
         {
-            Assert.AreEqual(null, Program.Sum(null));
+            Assert.AreEqual(null, Kata.Sum(null));
         }
 
         [Test]
@@ -277,7 +277,7 @@ namespace CodeWar
         [TestCase("multipleuid", ExpectedResult = new string[1] { "multipleuid" })]
         public string[] BasicTest(string s)
         {
-            return Program.GetUserIds(s);
+            return Kata.GetUserIds(s);
         }
 
 
@@ -302,25 +302,25 @@ namespace CodeWar
         [Test]
         public void HappyPath1()
         {
-            Assert.IsTrue(StringMerger.isMerge("codewars", "code", "wars"), "codewars can be created from code and wars");
+            Assert.IsTrue(StringMerger.IsMerge("codewars", "code", "wars"), "codewars can be created from code and wars");
         }
 
         [Test]
         public void HappyPath2()
         {
-            Assert.IsTrue(StringMerger.isMerge("codewars", "cdwr", "oeas"), "codewars can be created from cdwr and oeas");
+            Assert.IsTrue(StringMerger.IsMerge("codewars", "cdwr", "oeas"), "codewars can be created from cdwr and oeas");
         }
 
         [Test]
         public void SadPath1()
         {
-            Assert.IsFalse(StringMerger.isMerge("codewars", "cod", "wars"), "Codewars are not codwars");
+            Assert.IsFalse(StringMerger.IsMerge("codewars", "cod", "wars"), "Codewars are not codwars");
         }
         //code and wasr
         [Test]
         public void SadPath2()
         {
-            Assert.IsFalse(StringMerger.isMerge("codewars", "code", "wasr"), "Codewars are not codwars");
+            Assert.IsFalse(StringMerger.IsMerge("codewars", "code", "wasr"), "Codewars are not codwars");
         }
 
 
