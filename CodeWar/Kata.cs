@@ -126,6 +126,27 @@ namespace CodeWar
             return xs.ToList().Count(t => t == x);
         }
 
+        public static string Order(string words)
+        {
+            if (string.IsNullOrEmpty(words))
+                return "";
+            var numbersDic = new SortedDictionary<int, int>();
+            var splitted = words.Split(' ');
+            for (var i = 0; i < splitted.Length; i++)
+            {
+                var matchDigit = int.Parse(Regex.Match(splitted[i], @"\d+").Value);
+                numbersDic.Add(matchDigit, i);
+            }
+
+            var result = new StringBuilder();
+            foreach (var numPair in numbersDic)
+            {
+                result.Append(splitted[numPair.Value]);
+                result.Append(" ");
+            }
+
+            return result.ToString().TrimEnd();
+        }
 
         public static string orderWeight(string strng)
         {
@@ -457,5 +478,29 @@ namespace CodeWar
             }
             return result.ToString();
         }
+
+       
+
+        public static string ToUnderscore(string str)
+        {
+            var builder = new StringBuilder();
+            builder.Append(char.ToLower(str[0]));
+            str = str.Substring(1);
+            foreach (var s in str)
+            {
+                if (char.IsUpper(s))
+                    builder.Append($"_{char.ToLower(s)}");
+                else
+                    builder.Append(s);
+            }
+            return builder.ToString();
+        }
+
+        public static string ToUnderscore(int str)
+        {
+            return str.ToString();
+        }
+
+
     }
 }

@@ -358,5 +358,24 @@ namespace CodeWar
         }
         [Test, TestCaseSource("testCasesChange")]
         public string TestChange(string input) => Kata.Change(input);
+
+        [Test, Description("Sample Tests")]
+        public void SampleTest()
+        {
+            Assert.AreEqual("Thi1s is2 3a T4est", Kata.Order("is2 Thi1s T4est 3a"));
+            Assert.AreEqual("Fo1r the2 g3ood 4of th5e pe6ople", Kata.Order("4of Fo1r pe6ople g3ood th5e the2"));
+            Assert.AreEqual("", Kata.Order(""));
+        }
+
+    [Test]
+    public void ToUnderscoreTests()
+        {
+        Assert.AreEqual("test_controller", Kata.ToUnderscore("TestController"));
+        Assert.AreEqual("this_is_beautiful_day", Kata.ToUnderscore("ThisIsBeautifulDay"));
+        Assert.AreEqual("am7_days", Kata.ToUnderscore("Am7Days"));
+        Assert.AreEqual("my3_code_is4_times_better", Kata.ToUnderscore("My3CodeIs4TimesBetter"));
+        Assert.AreEqual("arbitrarily_sending_different_types_to_functions_makes_katas_cool", Kata.ToUnderscore("ArbitrarilySendingDifferentTypesToFunctionsMakesKatasCool"));
+        Assert.AreEqual("1", Kata.ToUnderscore(1), "Numbers should be turned to strings!");
+        }
     }
 }
